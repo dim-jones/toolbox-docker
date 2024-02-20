@@ -95,6 +95,13 @@ Use traceroute to trace the route of a packet :
 ```
 docker run --rm -it dimjones/toolbox traceroute www.google.com
 ```
+## The antivirus version
+The antivirus version  embeds the ClamAV antivirus to scan files. It's a good way to scan files without installing the antivirus on your machine. 
+```
+docker run -it --rm -v "$(pwd):/toscan" dimjones/toolbox:antivirus bash
+89e3b57cdd08:/# freshclam
+89e3b57cdd08:/# clamscan -r /toscan
+```
 
 ### Licence
 This toolbox is under the MIT licence. You can use it as you want. If you want to improve it, feel free to do it and to share it with the community. 

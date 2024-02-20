@@ -14,5 +14,8 @@ RUN apk add --no-cache \
     netcat-openbsd \
     bind-tools \
     traceroute
+    
+RUN apk add --no-cache clamav clamav-libunrar \
+    && freshclam
 
 CMD ["/bin/bash"]
